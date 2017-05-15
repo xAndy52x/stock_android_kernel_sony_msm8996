@@ -53,4 +53,4 @@ How to build your kernel:
 
   Step 2: Assembling the boot.img
     (In the Linux Kernel directory)
-    $ mkbootimg --kernel out/arch/arm64/boot/Image.gz-dtb --ramdisk ramdisk.img --cmdline "androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 cma=16M@0-0xffffffff coherent_pool=2M" setenforce=0 --base 0x80000000 --pagesize 4096 --ramdisk_offset 0x02200000 --tags_offset 0x02000000 --output boot.img
+    $ mkbootimg --kernel out/arch/arm64/boot/Image.gz-dtb --ramdisk ramdisk.cpio.gz --cmdline "androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 cma=32M@0-0xffffffff coherent_pool=2M zram.backend=z3fold buildvariant=user" --base 0x80000000 --pagesize 4096 --ramdisk_offset 0x02200000 --tags_offset 0x02000000 --output boot.img
